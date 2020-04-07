@@ -12,7 +12,7 @@ cont = 1
 
 
 def leerDatos(ranking, simbol, name, price):
-    url = 'http://192.168.0.12:1234/api/currency'
+    url = 'https://aimarcrypto.herokuapp.com/api/currency'
     objeto = {'ranking': ranking, 'simbol': simbol,
               'name': name, 'price': price}
     x = requests.post(url, data=objeto)
