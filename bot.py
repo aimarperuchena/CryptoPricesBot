@@ -1,7 +1,7 @@
-import urllib3.request
+
 import time
 import urlopen
-import request
+
 import requests
 from bs4 import BeautifulSoup
 from urllib3.request import Request, urlopen
