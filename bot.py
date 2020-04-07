@@ -1,6 +1,6 @@
 
 import time
-import urlopen
+
 
 import requests
 from bs4 import BeautifulSoup
