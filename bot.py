@@ -4,7 +4,7 @@ import time
 
 import requests
 from bs4 import BeautifulSoup
-from urllib3.request import Request, urlopen
+from urllib.request import Request, urlopen
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from datetime import datetime
