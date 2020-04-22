@@ -28,10 +28,11 @@ def limpiar(dato):
 
 
 def generarPeticion(ranking, simbol, name, price, volume, capital, change24h, change7d, change1m, change6m, change1a, offer, demand, ratio):
-    url = 'http://localhost:3000/api/crypto/prices'
+    url = 'https://aimarcryptoapi.herokuapp.com/api/crypto/prices'
     objeto = {'simbol': simbol, 'name': name, 'ranking': ranking, 'price': price, 'volume': volume, 'capital': capital, 'change24h': change24h,
               'change7d': change7d, 'change1m': change1m, 'change6m': change6m, 'change1a': change1a, 'offer': offer, 'demand': demand, 'ratio': ratio}
     x = requests.post(url, data=objeto)
+    print(x.text)
     
     
 
@@ -62,11 +63,12 @@ def readLine(linea):
 def leerHtml():
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3'}
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3',}
+    
     reg_url = 'https://cryptowat.ch/es-es/assets'
     req = Request(url=reg_url, headers=headers)
     html = urlopen(req).read()
-    soup2 = BeautifulSoup(html)
+    soup2 = BeautifulSoup(html,features="html.parser")
 
     body = soup2.find("div", {"id": "__next"})
     content = body.find("div", {"class": "my-10"})
