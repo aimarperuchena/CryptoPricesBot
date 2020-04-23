@@ -82,6 +82,6 @@ def leerHtml():
 a=True
 while a==True:
     leerHtml()
-    time.sleep(46)
+    time.sleep(460)
 
 
