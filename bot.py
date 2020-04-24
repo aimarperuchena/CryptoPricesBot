@@ -79,5 +79,7 @@ def leerHtml():
     lineas = tabla.findAll("a", {"class": "_1roDdymkPS2zplXEDcBm0L"})
     for linea in lineas:
         readLine(linea)
-
-
+a=True
+while a==True:
+    leerHtml()
+    time.sleep(300)
