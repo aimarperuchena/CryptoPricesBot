@@ -55,9 +55,9 @@ def readLine(linea):
     tds = linea.findAll("div")
     ranking = tds[0].text
     td_simbolo = tds[1]
-
-    leerDatos(str(tds[0].text), str(tds[1].text), str(tds[2].text), str(tds[3].text), str(tds[4].text), str(tds[5].text), str(tds[6].text),
-              str(tds[7].text), str(tds[8].text), str(tds[9].text), str(tds[10].text), str(tds[11].text), str(tds[12].text), str(tds[13].text))
+    if tds[1].text=="BTC":
+        leerDatos(str(tds[0].text), str(tds[1].text), str(tds[2].text), str(tds[3].text), str(tds[4].text), str(tds[5].text), str(tds[6].text),
+                  str(tds[7].text), str(tds[8].text), str(tds[9].text), str(tds[10].text), str(tds[11].text), str(tds[12].text), str(tds[13].text))
 
 
 def leerHtml():
@@ -77,7 +77,7 @@ def leerHtml():
     tabla = overflow_x_auto.find("div", {"class": "_2eV8NnSAuzZ4ULshmhbQV0"})
     lineas = tabla.findAll("a", {"class": "_1roDdymkPS2zplXEDcBm0L"})
     for linea in lineas:
-        readLine(linea)
+            readLine(linea)
 
 leerHtml()
 
