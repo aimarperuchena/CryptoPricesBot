@@ -29,6 +29,7 @@ def limpiar(dato):
 
 def generarPeticion(ranking, simbol, name, price, volume, capital, change24h, change7d, change1m, change6m, change1a, offer, demand, ratio):
     url = 'https://aimarcryptoapi.herokuapp.com/api/crypto/prices'
+    """ url='http://localhost:3000/api/crypto/prices' """
     objeto = {'simbol': simbol, 'name': name, 'ranking': ranking, 'price': price, 'volume': volume, 'capital': capital, 'change24h': change24h,
               'change7d': change7d, 'change1m': change1m, 'change6m': change6m, 'change1a': change1a, 'offer': offer, 'demand': demand, 'ratio': ratio}
     x = requests.post(url, data=objeto)
@@ -55,7 +56,7 @@ def readLine(linea):
     tds = linea.findAll("div")
     ranking = tds[0].text
     td_simbolo = tds[1]
-    if tds[1].text=="BTC":
+    if tds[1].text=="BTC" or tds[1].text=="ETH" or tds[1].text=="LTC":
         leerDatos(str(tds[0].text), str(tds[1].text), str(tds[2].text), str(tds[3].text), str(tds[4].text), str(tds[5].text), str(tds[6].text),
                   str(tds[7].text), str(tds[8].text), str(tds[9].text), str(tds[10].text), str(tds[11].text), str(tds[12].text), str(tds[13].text))
 
