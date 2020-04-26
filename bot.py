@@ -28,8 +28,7 @@ def limpiar(dato):
 
 
 def generarPeticion(ranking, simbol, name, price, volume, capital, change24h, change7d, change1m, change6m, change1a, offer, demand, ratio):
-    url = 'https://aimarcryptoapi.herokuapp.com/api/crypto/prices'
-    """ url='http://localhost:3000/api/crypto/prices' """
+    url='http://localhost:3000/api/crypto/prices'
     objeto = {'simbol': simbol, 'name': name, 'ranking': ranking, 'price': price, 'volume': volume, 'capital': capital, 'change24h': change24h,
               'change7d': change7d, 'change1m': change1m, 'change6m': change6m, 'change1a': change1a, 'offer': offer, 'demand': demand, 'ratio': ratio}
     x = requests.post(url, data=objeto)
