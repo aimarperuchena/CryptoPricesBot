@@ -96,7 +96,6 @@ def generarPeticion(ranking, simbol, name, price, volume, capital, change24h, ch
               'change7d': change7d, 'change1m': change1m, 'change6m': change6m, 'change1a': change1a, 'offer': offer, 'demand': demand, 'ratio': ratio,
               'volume_msg': volume_msg, 'capital_msg': capital_msg, 'offer_msg': offer_msg, 'demand_msg': demand_msg}
     x = requests.post(url, data=objeto)
-    print(x.text)
 
 
 def leerDatos(ranking, simbol, name, price, volume, capital, change24h, change7d, change1m, change6m, change1a, offer, demand, ratio):
